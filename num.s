@@ -22,7 +22,7 @@ _print_num:
         mov $1, %rdx     # sizeof(char) = 1 byte
         syscall          # write(1, "0", 1)
 
-        pop %rsi         # get rid of stack pointer  value
+        pop %rsi         # throw away counter's ascii value 
         pop %rcx         # pop %rcx back to its original value
         inc %rcx         # increment
         cmp $10, %rcx    # if x = 10,
