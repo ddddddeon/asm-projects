@@ -12,21 +12,21 @@ _start:
         mov $1, %rdi     # 1 = stdout
 
 _zero:
-        xor %rcx, %rcx   # set counter to 0        
+        xor %rcx, %rcx   # n = 0        
         
 _print_num:
-        push %rcx        # save counter's original value
-        add $0x30, %rcx  # ascii value of the counter
-        push %rcx        # save counter value
-        mov %rsp, %rsi   # pointer to char = "0"
+        push %rcx        # save n's original value
+        add $0x30, %rcx  # ascii value of n
+        push %rcx        # save ascii value of n
+        mov %rsp, %rsi   # pointer to char = "n"
         mov $1, %rdx     # sizeof(char) = 1 byte
-        syscall          # write(1, "0", 1)
+        syscall          # write(1, "n", 1)
 
-        pop %rsi         # throw away counter's ascii value 
+        pop %rsi         # throw away ascii value of n
         pop %rcx         # pop %rcx back to its original value
         inc %rcx         # increment
-        cmp $10, %rcx    # if x = 10,
-        je  _zero        # reset counter to 0
+        cmp $10, %rcx    # if n = 10,
+        je  _zero        # reset n to 0 before looping again
         jmp _print_num   # loop back to print_num with incremented counter
         
 _end:                    # will not be executed     
