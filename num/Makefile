@@ -7,7 +7,7 @@ asm: findBin
 hex: 
 	@$(CC) -nostdlib -O0 -c src/$(NAME).s; \
 	which objdump > /dev/null 2>&1 && objdump -d $(NAME).o && \
-	rm sc.o || true;
+	rm $(NAME).o || true;
 
 findBin: unwanted_files
 	@[ -d bin ] || mkdir bin
