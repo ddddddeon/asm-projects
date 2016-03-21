@@ -18,7 +18,7 @@ _print_num:
         push %rcx        # save n's original value
         add $0x30, %rcx  # ascii value of n
         push %rcx        # save ascii value of n
-        mov %rsp, %rsi   # pointer to char = "n"
+        mov %rsp, %rsi   # pointer to n = "n"
         mov $1, %rdx     # sizeof(char) = 1 byte
         syscall          # write(1, "n", 1)
 
