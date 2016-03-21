@@ -17,7 +17,7 @@ _zero:
 _print_num:
         push %rcx        # save n's original value
         add $0x30, %rcx  # ascii value of n
-        push %rcx        # save ascii value of n
+        push %rcx        # push ascii value of n to get stack pointer
         mov %rsp, %rsi   # pointer to n = "n"
         mov $1, %rdx     # sizeof(char) = 1 byte
         syscall          # write(1, "n", 1)
