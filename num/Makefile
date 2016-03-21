@@ -3,6 +3,7 @@ CC=gcc
 
 asm: findBin
 	$(CC) -o bin/$(NAME) -nostdlib -O0 src/$(NAME).s;
+
 hex: 
 	@$(CC) -nostdlib -O0 -c src/$(NAME).s; \
 	which objdump > /dev/null 2>&1 && objdump -d $(NAME).o && \
