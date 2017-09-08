@@ -28,8 +28,8 @@ start:
         mov eax, 0xb8000            ; back to start of vga text buffer
         xor ebx, ebx                ; reset counter
 
-        xor ecx, ecx								; zero out ecx for use as a counter
-        call pause								  ; by pause subroutine
+        xor ecx, ecx		    ; zero out ecx for use as a counter
+        call pause		    ; by pause subroutine
         
 .deon:                              ; print "deon" to text buffer
         mov dword [eax], 0x4f654f64 ; 'e' 'd'
@@ -43,11 +43,11 @@ start:
                                     ; (20 * "deon" per line) * (25 lines) = 500 * "deon"
         jne .deon                   ; loop to 500
 
-        xor ecx, ecx								; reset counter at ecx to 0
-        call pause									; and pause for ~a sec
+        xor ecx, ecx		    ; reset counter at ecx to 0
+        call pause		    ; and pause for ~a sec
         
 .repeat:
-        jmp .begin_loop							; infinite loop
+        jmp .begin_loop		    ; infinite loop
         
 
 pause:   
