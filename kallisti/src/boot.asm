@@ -52,8 +52,8 @@ start:
 
 pause:   
 .wait_start:
-        nop													; no op
-        inc ecx											; increment counter
-        cmp ecx, 600000000					; do ~600 million no-ops
-        jne .wait_start							; in a loop
-        ret													; and return to caller
+        nop			    ; no op
+        inc ecx			    ; increment counter
+        cmp ecx, 600000000	    ; do ~600 million no-ops
+        jne .wait_start		    ; in a loop
+        ret			    ; and return to caller
